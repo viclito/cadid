@@ -23,6 +23,19 @@
         <!-- Optional: Animate CSS for the wow.js animations -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
         <style>
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+            }
+            .content {
+                position: relative; /* Ensure content appears above the overlay */
+                z-index: 1; /* Ensure content is above the overlay */
+                padding: 20px; /* Adjust as needed */
+            }
             .client-box {
                 padding: 10px;
                 border: 1px solid #ccc;
@@ -101,27 +114,27 @@
                         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                             <ul class="navbar-nav alt-font">
                                 <li class="nav-item dropdown megamenu">
-                                    <a href="#" class="nav-link text-uppercase">Home</a>
+                                    <a href="#" class="nav-link text-uppercase" style="color: white;">Home</a>
                                     
                                 </li>
                                 <li class="nav-item dropdown simple-dropdown">
-                                    <a href="#" class="nav-link text-uppercase">Search</a>
+                                    <a href="#" class="nav-link text-uppercase" style="color: white;">Search</a>
                                     
                                 </li>
                                 <li class="nav-item dropdown simple-dropdown">
-                                    <a href="#" class="nav-link text-uppercase">Profile</a>
+                                    <a href="#" class="nav-link text-uppercase" style="color: white; ">Profile</a>
                                     
                                 </li>
                                 <li class="nav-item dropdown megamenu">
-                                    <a href="javascript:void(0);" class="nav-link text-uppercase">Product</a>
+                                    <a href="javascript:void(0);" class="nav-link text-uppercase" style="color: white;">Product</a>
                                     
                                 </li>
                                 <li class="nav-item dropdown simple-dropdown">
-                                    <a href="#" class="nav-link text-uppercase">Blog</a>
+                                    <a href="#" class="nav-link text-uppercase" style="color: white;">Blog</a>
                                     
                                 </li>
                                 <li class="nav-item dropdown simple-dropdown">
-                                    <a href="#" class="nav-link text-uppercase">Support</a>
+                                    <a href="#" class="nav-link text-uppercase" style="color: white; ">Support</a>
                                     
                                 </li>
                                 
@@ -145,27 +158,30 @@
         <!-- end header -->
         <!-- start hero section -->
         <section class="p-0 parallax mobile-height" data-parallax-background-ratio="0.5" 
-        style="background-image: url('https://images.unsplash.com/photo-1517646331032-9e8563c520a1?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
+        style="background-image: url('https://images.unsplash.com/photo-1517646331032-9e8563c520a1?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); position: relative;"
         >
-            <div class="container position-relative">
-                <div class="row">
-                    <div class="col-lg-8 col-md-10 col-sm-11 full-screen md-h-650px sm-h-450px d-flex flex-column justify-content-center wow animate__fadeIn">
-                        <!-- <span class="text-extra-medium alt-font font-weight-500 text-uppercase text-olivine-green d-block margin-35px-bottom xs-margin-15px-bottom">Financial planning</span> -->
-                        <h2 class="alt-font font-weight-700 text-dark-charcoal text-uppercase margin-2-half-rem-bottom letter-spacing-minus-2px sm-margin-20px-bottom xs-margin-15px-bottom">Providing you with the nonprofit information you need</h2>
-                        <p class="text-extra-medium line-height-30px w-75 margin-3-rem-bottom lg-w-90 md-w-100 xs-margin-15px-bottom">Use GuideStar to look up a nonprofit and access the most complete data available.</p>
-                        <div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
-                            <div class="search-container">
-                                <input type="text" class="search-input" placeholder="Search...">
-                                <i class="fa fa-search search-icon"></i>
-                                <button class="search-button">Search</button>
+            <div class="overlay"></div>
+                <div class="content">
+                    <div class="container position-relative">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-10 col-sm-11 full-screen md-h-650px sm-h-450px d-flex flex-column justify-content-center wow animate__fadeIn">
+                                <!-- <span class="text-extra-medium alt-font font-weight-500 text-uppercase text-olivine-green d-block margin-35px-bottom xs-margin-15px-bottom">Financial planning</span> -->
+                                <h2 class="alt-font font-weight-700 text-dark-charcoal text-uppercase margin-2-half-rem-bottom letter-spacing-minus-2px sm-margin-20px-bottom xs-margin-15px-bottom" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Providing you with the nonprofit information you need</h2>
+                                <p class="text-extra-medium line-height-30px w-75 margin-3-rem-bottom lg-w-90 md-w-100 xs-margin-15px-bottom" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Use GuideStar to look up a nonprofit and access the most complete data available.</p>
+                                <div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
+                                    <div class="search-container">
+                                        <input type="text" class="search-input" placeholder="Search...">
+                                        <i class="fa fa-search search-icon"></i>
+                                        <button class="search-button">Search</button>
+                                    </div>
+                                    <a href="" class="btn btn-fancy btn-large section-link align-self-start" style="background-color: #ed1c24; color: white;">REGISTER FOR FREE</a>
+                                </div>
+                                
                             </div>
-                            <a href="" class="btn btn-fancy btn-large section-link align-self-start" style="background-color: #ed1c24; color: white;">REGISTER FOR FREE</a>
                         </div>
-                        
+                        <div class="down-section text-center z-index-1 xs-bottom-30px d-none d-sm-inline-block"><a href="#about" class="section-link"><i class="fa-solid fa-arrow-down text-dark-charcoal bg-white box-shadow-extra-large w-45px h-45px line-height-46px border-radius-100"></i></a></div>
                     </div>
                 </div>
-                <div class="down-section text-center z-index-1 xs-bottom-30px d-none d-sm-inline-block"><a href="#about" class="section-link"><i class="fa-solid fa-arrow-down text-dark-charcoal bg-white box-shadow-extra-large w-45px h-45px line-height-46px border-radius-100"></i></a></div>
-            </div>
         </section>
         <!-- end hero section -->
         
@@ -494,7 +510,7 @@
         
         
         <!-- start section -->
-        <section class="big-section wow animate__fadeIn">
+        <section class="big-section wow animate__fadeIn" style="background-color: rgb(235, 232, 232);">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-7 text-center margin-5-rem-bottom sm-margin-3-rem-bottom wow animate__fadeIn">

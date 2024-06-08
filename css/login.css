@@ -71,8 +71,10 @@ body {
 }
 .form-container h1 {
     color: black;
-    font-size: 38px;
+    font-size: 36px;
     margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 4rem;
 }
 .form-container p {
     margin-bottom: 20px;
@@ -129,5 +131,13 @@ body {
 @media(max-width : 1024px){
     .info-container{
         display: none;
+    }
+}
+@media(max-width : 700px){
+    .divider{
+        flex-direction: column;
+    }
+    .form-container .inside{
+        width: 100%;
     }
 }
