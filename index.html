@@ -89,6 +89,95 @@
                 background-color: white;
                 color: #ed1c24;
             }
+            .megamenu .dropdown-menu {
+                width: 100%; /* Make the dropdown full width */
+                left: 0 !important; /* Align the dropdown to the left */
+                top: 100%; /* Position it right below the parent */
+                position: absolute; /* Ensure the dropdown stays within its container */
+                border: none; /* Remove any border if needed */
+                padding: 20px; /* Adjust padding as needed */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add a shadow for better visibility */
+                background-color: white; /* Optional: ensure background color is set */
+                z-index: 1000; /* Ensure it appears above other elements */
+            }
+            .small{
+                color: white!important;
+            }
+            @media (max-width:1000px) {
+                .small{
+                    color: black!important;
+                }
+            }
+
+            .toggle-button-container {
+                position: absolute;
+                top: 0px;
+                z-index: 1200;
+                text-align: center;
+                width: 100%;
+                background-color: white;
+            }
+            
+            .toggle-button {
+                background-color: white;
+                border: none;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            
+            .expandable-content {
+                display: none;
+                position: absolute;
+                width: 100%;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                z-index: 9999;
+                top: 30px; /* Adjust as needed */
+            }
+            
+            .expandable-content.visible {
+                display: block;
+            }
+            
+            .navbar {
+                z-index: 1000; /* Ensure navbar is above other content */
+            }
+            
+            
+            .navbar {
+                background-color: #333;
+                padding: 1rem;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .nav-link {
+                color: white;
+                text-decoration: none;
+                margin: 0 1rem;
+            }
+            
+            .nav-link:hover {
+                text-decoration: underline;
+            }
+            
+            /* Responsive styling */
+            @media (max-width: 768px) {
+                .toggle-button {
+                    width: 100%;
+                    padding: 1rem;
+                    font-size: 1.2rem;
+                }
+            
+                .navbar {
+                    flex-direction: column;
+                }
+            
+                .nav-link {
+                    margin: 0.5rem 0;
+                }
+            }
         </style>
     </head>
     <body data-mobile-nav-style="classic">
@@ -96,6 +185,88 @@
         <header>
             <!-- start navigation -->
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent border-bottom border-color-black-transparent header-light fixed-top navbar-boxed header-reverse-scroll">
+
+
+                <!-- start navigation -->
+                <div class="toggle-button-container">
+                    <button id="toggleContentBtn" class="toggle-button">
+                        <img src="assets/down-arrow.png" alt="" width="16px">
+                    </button>
+                </div>
+                
+                <!-- Expandable Content -->
+                <div id="expandableContent" class="expandable-content hidden">
+                    <div class="container" style="min-height: auto;">
+                        <div class="row">
+                            <!-- start footer column -->
+                            <div class="col-lg-3 col-sm-6 order-sm-1 order-lg-0 md-margin-40px-bottom xs-margin-25px-bottom">
+                                <h6>GuideStar India</h6>
+                                <!-- <a href="index.html" class="footer-logo margin-25px-bottom d-inline-block"><img src="images/logo-green-black.png" data-at2x="images/logo-green-black@2x.png" alt=""></a> -->
+                                <p class="margin-30px-bottom">Candid is a 501(c)(3) nonprofit organization, EIN 13-1837418. Donations are tax-deductible. </p>
+                                <div class="social-icon-style-12">
+                                    <ul class="extra-small-icon">
+                                        <li><a class="facebook" href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i class="fa-brands fa-dribbble"></i></a></li>
+                                        <li><a class="twitter" href="http://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- end footer column -->
+                            <!-- start footer column -->
+                            <div class="col-lg-2 offset-sm-1 col-sm-5 order-sm-2 order-lg-0 md-margin-40px-bottom xs-margin-25px-bottom">
+                                <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom">Our Websites</span>
+                                <ul>
+                                    <li><a href="">About Candid</a></li>
+                                    <li><a href=""></a>Press room</li>
+                                    <li><a href=""></a>Support Candid</li>
+                                    <li><a href=""></a>Partners and clients</li>
+                                    
+                                </ul>
+                            </div>
+                            <!-- end footer column -->
+                            <!-- start footer column -->
+                            <div class="col-lg-2 col-sm-5 offset-sm-1 offset-lg-0 order-sm-4 order-lg-0 xs-margin-25px-bottom">
+                                <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom"></span>
+                                <ul>                           
+                                    <li href="">Contact us</li>
+                                    <li href="">Privacy policy</li>
+                                    <li href="">Legal notice</li>
+                                    <li href="">Terms of use</li>
+                                    <li href="">Site status</li>
+                                </ul>
+                            </div>
+                            <!-- end footer column -->
+                            <!-- start footer column -->
+                            <div class="col-lg-2 col-sm-5 offset-sm-1 offset-lg-0 order-sm-4 order-lg-0 xs-margin-25px-bottom">
+                                <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom">Product & service</span>
+                                <ul>                           
+                                    <li href="">Contact us</li>
+                                    <li href="">Privacy policy</li>
+                                    <li href="">Legal notice</li>
+                                    <li href="">Terms of use</li>
+                                    <li href="">Site status</li>
+                                </ul>
+                            </div>
+                            <!-- end footer column -->
+                            <!-- start footer column -->
+                            <div class="col-lg-2 col-sm-5 offset-sm-1 offset-lg-0 order-sm-4 order-lg-0 xs-margin-25px-bottom">
+                                <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom"></span>
+                                <ul>                           
+                                    <li href="">Contact us</li>
+                                    <li href="">Privacy policy</li>
+                                    <li href="">Legal notice</li>
+                                    <li href="">Terms of use</li>
+                                    <li href="">Site status</li>
+                                </ul>
+                            </div>
+                            <!-- end footer column -->
+                            
+                        </div>
+                    </div>
+                </div>
+
+
                 <div class="container-fluid nav-header-container">
                     <div class="col-auto col-sm-6 col-lg-2 me-auto ps-lg-0">
                         <a class="navbar-brand" href="index.html">
@@ -114,27 +285,27 @@
                         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                             <ul class="navbar-nav alt-font">
                                 <li class="nav-item dropdown megamenu">
-                                    <a href="#" class="nav-link text-uppercase" style="color: white;">Home</a>
+                                    <a href="#" class="small nav-link text-uppercase">Home</a>
                                     
                                 </li>
                                 <li class="nav-item dropdown simple-dropdown">
-                                    <a href="#" class="nav-link text-uppercase" style="color: white;">Search</a>
+                                    <a href="#" class="small nav-link text-uppercase" >Search</a>
                                     
                                 </li>
                                 <li class="nav-item dropdown simple-dropdown">
-                                    <a href="#" class="nav-link text-uppercase" style="color: white; ">Profile</a>
+                                    <a href="#" class="small nav-link text-uppercase" >Profile</a>
                                     
                                 </li>
                                 <li class="nav-item dropdown megamenu">
-                                    <a href="javascript:void(0);" class="nav-link text-uppercase" style="color: white;">Product</a>
+                                    <a href="javascript:void(0);" class="small nav-link text-uppercase" >Product</a>
                                     
                                 </li>
                                 <li class="nav-item dropdown simple-dropdown">
-                                    <a href="#" class="nav-link text-uppercase" style="color: white;">Blog</a>
+                                    <a href="#" class="small nav-link text-uppercase" >Blog</a>
                                     
                                 </li>
                                 <li class="nav-item dropdown simple-dropdown">
-                                    <a href="#" class="nav-link text-uppercase" style="color: white; ">Support</a>
+                                    <a href="#" class="small nav-link text-uppercase" >Support</a>
                                     
                                 </li>
                                 
@@ -147,11 +318,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="col-auto col-lg-2 text-end pe-0 font-size-0">
-                        <div class="header-button d-none d-md-inline-block">
-                            <a href="" class="btn btn-very-small btn-white btn-round-edge bg-white border-white text-dark box-shadow-large">Sign In</a>
-                        </div>
-                    </div> -->
+                    
                 </div>
             </nav>
         </header>
@@ -680,5 +847,21 @@
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/theme-vendors.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+        <script>
+            // scripts.js
+            document.addEventListener('DOMContentLoaded', function() {
+                const toggleContentBtn = document.getElementById('toggleContentBtn');
+                const expandableContent = document.getElementById('expandableContent');
+
+                toggleContentBtn.addEventListener('click', function() {
+                    if (expandableContent.classList.contains('visible')) {
+                        expandableContent.classList.remove('visible');
+                    } else {
+                        expandableContent.classList.add('visible');
+                    }
+                });
+            });
+
+        </script>
     </body>
 </html>
