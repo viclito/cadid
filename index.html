@@ -17,6 +17,66 @@
         <link rel="stylesheet" type="text/css" href="css/theme-vendors.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <!-- Optional: Animate CSS for the wow.js animations -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <style>
+            .client-box {
+                padding: 10px;
+                border: 1px solid #ccc;
+            }
+            .client-box-image {
+                width: 100px; /* Set width */
+                height: 100px; /* Set height */
+            }
+            
+            .register-button:hover {
+                background-color: #004878;
+                color: white;
+            }
+            .search-container {
+                position: relative;
+                width: 300px;
+                margin-top: 4px;
+            }
+    
+            .search-input {
+                padding: 10px 40px 10px 20px;
+                border: 2px solid #ed1c24;
+                border-radius: 5px;
+                outline: none;
+                font-size: 16px;
+                width: 300px;
+            }
+    
+            .search-icon {
+                position: absolute;
+                top: 40%;
+                right: 15px;
+                transform: translateY(-50%);
+                font-size: 20px;
+                color: #ccc;
+                pointer-events: none;
+            }
+    
+            .search-input:focus + .search-icon {
+                color: #555;
+            }
+    
+            .search-button {
+                display: none; /* Hide the button */
+            }
+            .buton{
+                background-color: #ed1c24;
+                color: white;
+            }
+            .buton:hover{
+                background-color: white;
+                color: #ed1c24;
+            }
+        </style>
     </head>
     <body data-mobile-nav-style="classic">
         <!-- start header -->
@@ -26,10 +86,9 @@
                 <div class="container-fluid nav-header-container">
                     <div class="col-auto col-sm-6 col-lg-2 me-auto ps-lg-0">
                         <a class="navbar-brand" href="index.html">
-                            <!-- <img src="images/logo-green-black.png" data-at2x="images/logo-green-black@2x.png" class="default-logo" alt="">
-                            <img src="images/logo-green-black.png" data-at2x="images/logo-green-black@2x.png" class="alt-logo" alt="">
-                            <img src="images/logo-green-black.png" data-at2x="images/logo-green-black@2x.png" class="mobile-logo" alt=""> -->
-                            <h6 style="padding-top: 25px;">Logo</h6>
+                            <img src="https://guidestarindia.org/images/GSI-logo_334x77.png" data-at2x="images/logo-green-black@2x.png" class="default-logo" alt="">
+                            <img src="https://guidestarindia.org/images/GSI-logo_334x77.png" data-at2x="images/logo-green-black@2x.png" class="alt-logo" alt="">
+                            <img src="https://guidestarindia.org/images/GSI-logo_334x77.png" data-at2x="images/logo-green-black@2x.png" class="mobile-logo" alt="">
                         </a>
                     </div>
                     <div class="col-auto col-lg-8 menu-order px-lg-0">
@@ -54,7 +113,7 @@
                                     
                                 </li>
                                 <li class="nav-item dropdown megamenu">
-                                    <a href="javascript:void(0);" class="nav-link text-uppercase">product</a>
+                                    <a href="javascript:void(0);" class="nav-link text-uppercase">Product</a>
                                     
                                 </li>
                                 <li class="nav-item dropdown simple-dropdown">
@@ -65,25 +124,28 @@
                                     <a href="#" class="nav-link text-uppercase">Support</a>
                                     
                                 </li>
-                                <!-- <li class="nav-item dropdown megamenu">
-                                    <a href="" class="nav-link text-uppercase">Shop</a>
-                                    
-                                </li> -->
+                                
                             </ul>
+                            <div class="header-button d-none d-md-inline-block">
+                                <a href="login.html" class="register-button btn btn-very-small btn-white btn-round-edge bg-white border-white text-dark box-shadow-large " >Create Account</a>
+                            </div>
+                            <div class="header-button d-none d-md-inline-block">
+                                <a href="" class="btn btn-very-small btn-white btn-round-edge bg-white border-white text-dark box-shadow-large">Sign In</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-auto col-lg-2 text-end pe-0 font-size-0">
+                    <!-- <div class="col-auto col-lg-2 text-end pe-0 font-size-0">
                         <div class="header-button d-none d-md-inline-block">
                             <a href="" class="btn btn-very-small btn-white btn-round-edge bg-white border-white text-dark box-shadow-large">Sign In</a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </nav>
         </header>
         <!-- end header -->
         <!-- start hero section -->
         <section class="p-0 parallax mobile-height" data-parallax-background-ratio="0.5" 
-        style="background-image: url('https://images.unsplash.com/photo-1492999104346-cabaa757be8f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
+        style="background-image: url('https://images.unsplash.com/photo-1517646331032-9e8563c520a1?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
         >
             <div class="container position-relative">
                 <div class="row">
@@ -91,7 +153,15 @@
                         <!-- <span class="text-extra-medium alt-font font-weight-500 text-uppercase text-olivine-green d-block margin-35px-bottom xs-margin-15px-bottom">Financial planning</span> -->
                         <h2 class="alt-font font-weight-700 text-dark-charcoal text-uppercase margin-2-half-rem-bottom letter-spacing-minus-2px sm-margin-20px-bottom xs-margin-15px-bottom">Providing you with the nonprofit information you need</h2>
                         <p class="text-extra-medium line-height-30px w-75 margin-3-rem-bottom lg-w-90 md-w-100 xs-margin-15px-bottom">Use GuideStar to look up a nonprofit and access the most complete data available.</p>
-                        <a href="" class="btn btn-fancy btn-large btn-olivine-green section-link align-self-start">REGISTER FOR FREE</a>
+                        <div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
+                            <div class="search-container">
+                                <input type="text" class="search-input" placeholder="Search...">
+                                <i class="fa fa-search search-icon"></i>
+                                <button class="search-button">Search</button>
+                            </div>
+                            <a href="" class="btn btn-fancy btn-large section-link align-self-start" style="background-color: #ed1c24; color: white;">REGISTER FOR FREE</a>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="down-section text-center z-index-1 xs-bottom-30px d-none d-sm-inline-block"><a href="#about" class="section-link"><i class="fa-solid fa-arrow-down text-dark-charcoal bg-white box-shadow-extra-large w-45px h-45px line-height-46px border-radius-100"></i></a></div>
@@ -103,12 +173,13 @@
         <section id="about" class="big-section wow animate__fadeIn">
             <div class="container">
                 <div class="row align-items-center justify-content-center">
-                    <div class="col-lg-4 col-md-8 text-center text-lg-start md-margin-6-rem-bottom wow animate__fadeIn">
-                        <!-- <span class="alt-font text-medium text-olivine-green text-uppercase font-weight-500 margin-25px-bottom d-inline-block sm-margin-10px-bottom">About company</span> -->
-                        <h5 class="alt-font text-dark-charcoal font-weight-700 text-uppercase letter-spacing-minus-1px w-85 margin-20px-bottom lg-w-90 md-w-100">Premier destination for nonprofits and nonprofit research</h5>
-                        <!-- <p class="w-80 margin-35px-bottom lg-w-100">Lorem ipsum dolor consectetur adipiscing do eiusmod tempor labore dolore magna ut enim ad minim veniam nostrud.</p> -->
-                        <!-- <a href="index.html" class="btn btn-fancy btn-small btn-transparent-light-gray">Discover litho</a> -->
+                    <div class="col-lg-12 text-center text-lg-start md-margin-6-rem-bottom wow animate__fadeIn">
+                        <h5 class="alt-font text-center text-dark-charcoal font-weight-700 text-uppercase letter-spacing-minus-1px " style="margin-bottom: 60px;">
+                            Premier destination for nonprofits and nonprofit research
+                        </h5>
                     </div>
+                </div>
+                <div class="row">
                     <!-- start services item -->
                     <div class="col-lg-4 col-md-6 sm-margin-30px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
                         <div class="services-box-style-01 bg-extra-dark-gray box-shadow-large">
@@ -121,9 +192,11 @@
                                 </div>
                             </div>
                             <div class="position-relative bg-white last-paragraph-no-margin padding-3-rem-tb padding-3-half-rem-lr">
-                                <span class="alt-font font-weight-500 text-dark-charcoal text-uppercase d-block margin-5px-bottom" >Attract donors with your nonprofit profile</span>
-                                <p>Claim and update your organization’s nonprofit profile. Earn a Seal of Transparency to give donors the information they need to support you. </p>
-                                <div class="w-100 h-4px bg-olivine-green position-absolute left-0px bottom-0px d-block"></div>
+                                <span class="alt-font font-weight-500 text-dark-charcoal text-uppercase d-block margin-5px-bottom">
+                                    Attract donors with your nonprofit profile
+                                </span>
+                                <p>Claim and update your organization’s nonprofit profile. Earn a Seal of Transparency to give donors the information they need to support you.</p>
+                                <div class="w-100 h-4px bg-olivine-green position-absolute left-0px bottom-0px d-block" style="background-color: #004878;"></div>
                             </div>
                         </div>
                     </div>
@@ -132,7 +205,7 @@
                     <div class="col-lg-4 col-md-6 sm-margin-30px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
                         <div class="services-box-style-01 bg-extra-dark-gray box-shadow-large">
                             <div class="imagex-box position-relative overflow-hidden">
-                                <img src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/GS-home-analysis@2x.webp" alt="" style="height: 200px;width: 100%;"/>
+                                <img src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/GS-home-analysis@2x.webp" alt="" style="height: 200px;width: 100%;" />
                                 <div class="services-box-hover align-items-center justify-content-center d-flex">
                                     <div class="services-icon">
                                         <a href="our-story.html" class="rounded-circle bg-white"><i class="fa-solid fa-arrow-right text-dark-charcoal"></i></a>
@@ -140,23 +213,20 @@
                                 </div>
                             </div>
                             <div class="position-relative bg-white last-paragraph-no-margin padding-3-rem-tb padding-3-half-rem-lr">
-                                <span class="alt-font font-weight-500 text-dark-charcoal text-uppercase d-block margin-5px-bottom">Research valuable nonprofit partners</span>
+                                <span class="alt-font font-weight-500 text-dark-charcoal text-uppercase d-block margin-5px-bottom">
+                                    Research valuable nonprofit partners
+                                </span>
                                 <p>Efficiently find organizations that will meet your goals and gain more valuable partnerships with GuideStar Pro.</p>
-                                <div class="w-100 h-4px bg-olivine-green position-absolute left-0px bottom-0px d-block"></div>
+                                <div class="w-100 h-4px bg-olivine-green position-absolute left-0px bottom-0px d-block" style="background-color: #004878;"></div>
                             </div>
                         </div>
                     </div>
                     <!-- end services item -->
                     <!-- start services item -->
-                    <div class="col-lg-4 col-md-0 wow animate__fadeIn" data-wow-delay="0.4s">
-                        
-                    </div>
-                    <!-- end services item -->
-                    <!-- start services item -->
-                    <div class="col-lg-4 col-md-6 wow animate__fadeIn" data-wow-delay="0.4s">
-                        <div class="services-box-style-01 bg-extra-dark-gray  box-shadow-large">
+                    <div class="col-lg-4 col-md-6 sm-margin-30px-bottom wow animate__fadeIn" data-wow-delay="0.4s">
+                        <div class="services-box-style-01 bg-extra-dark-gray box-shadow-large">
                             <div class="imagex-box position-relative overflow-hidden">
-                                <img src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/GS-home-support@2x.webp" alt="" style="height: 200px;width: 100%;"/>
+                                <img src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/GS-home-support@2x.webp" alt="" style="height: 200px;width: 100%;" />
                                 <div class="services-box-hover align-items-center justify-content-center d-flex">
                                     <div class="services-icon">
                                         <a href="our-story.html" class="rounded-circle bg-white"><i class="fa-solid fa-arrow-right text-dark-charcoal"></i></a>
@@ -164,9 +234,11 @@
                                 </div>
                             </div>
                             <div class="position-relative bg-white last-paragraph-no-margin padding-3-rem-tb padding-3-half-rem-lr">
-                                <span class="alt-font font-weight-500 text-dark-charcoal text-uppercase d-block margin-5px-bottom">Access nonprofit API solutions</span>
-                                <p>Power your platforms with Candid’s APIs to support your organizational needs.</p>
-                                <div class="w-100 h-4px bg-olivine-green position-absolute left-0px bottom-0px d-block"></div>
+                                <span class="alt-font font-weight-500 text-dark-charcoal text-uppercase d-block margin-5px-bottom">
+                                    Access nonprofit API solutions
+                                </span>
+                                <p style="padding-bottom: 60px;">Power your platforms with Candid’s APIs to support your organizational needs.</p>
+                                <div class="w-100 h-4px position-absolute left-0px bottom-0px d-block" style="background-color: #004878;"></div>
                             </div>
                         </div>
                     </div>
@@ -175,6 +247,7 @@
             </div>
         </section>
         <!-- end section -->
+
 
         <!-- start section -->
         <!-- <section class="p-0">
@@ -287,69 +360,99 @@
         </section> -->
         <!-- end section -->
 
-        <!-- start section -->
+
+
+
         <section class="big-section wow animate__fadeIn">
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 text-center text-md-start sm-margin-30px-bottom">
-                        <h5 class="alt-font text-dark-charcoal text-center font-weight-700 text-uppercase letter-spacing-minus-1px mb-0">Find up-to-date information on thousands of nonprofits including</h5>
+                        <h5 class="alt-font text-dark-charcoal text-center font-weight-700 text-uppercase letter-spacing-minus-1px mb-0">
+                            Find up-to-date information on thousands of nonprofits including
+                        </h5>
                     </div>
-                    <!-- <div class="col-xl-4 offset-xl-2 col-lg-4 col-md-5 text-center text-md-end wow animate__zoomIn">
-                        <a href="https://www.youtube.com/watch?v=g0f_BRYJLJE" class="popup-youtube btn btn-extra-large btn-olivine-green btn-round-edge"><i class="fa fa-arrow-right line-icon-Video-5 icon-large d-inline-block no-margin-left margin-15px-right align-middle" aria-hidden="true"></i> <div class="d-inline-block text-start align-middle font-weight-400"><span class="text-medium d-block line-height-15px">Story video</span>Watch</div></a>
-                    </div> -->
                 </div>
-                <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 client-logo-style-01 align-items-center margin-7-half-rem-top sm-margin-5-rem-top">
-                    <!-- start client logo item -->
-                    <div class="col text-center margin-30px-bottom sm-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.1s" >
-                        <div class="client-box padding-15px-all border border-color-dark-gray">
-                            <a href="#"><img class="client-box-image" src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/march-of-dimes@2x.webp" alt="" /></a>
+                <div class="swiper white-move margin-7-half-rem-top sm-margin-5-rem-top" data-slider-options='{"loop": true, "slidesPerView": 1, "spaceBetween": 30, "autoplay": { "delay": 3500, "disableOnInteraction": false },  "keyboard": { "enabled": true, "onlyInViewport": true }, "breakpoints": { "1200": { "slidesPerView": 6 }, "992": { "slidesPerView": 4 }, "768": { "slidesPerView": 3 }, "576": { "slidesPerView": 2 } } }'>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="client-box">
+                                <a href="#"><img class="client-box-image" src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/march-of-dimes@2x.webp" alt="" /></a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- end client logo item -->
-                    <!-- start client logo item -->
-                    <div class="col text-center margin-30px-bottom sm-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
-                        <div class="client-box padding-15px-all border border-color-dark-gray">
-                            <a href="#"><img class="client-box-image" src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/goodwill@2x.webp" alt="" /></a>
+                        <div class="swiper-slide">
+                            <div class="client-box">
+                                <a href="#"><img class="client-box-image" src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/goodwill@2x.webp" alt="" /></a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- end client logo item -->
-                    <!-- start client logo item -->
-                    <div class="col text-center margin-30px-bottom sm-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.3s">
-                        <div class="client-box padding-15px-all border border-color-dark-gray">
-                            <a href="#"><img class="client-box-image" src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/girls-inc@2x.webp" alt="" /></a>
+                        <div class="swiper-slide">
+                            <div class="client-box">
+                                <a href="#"><img class="client-box-image" src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/girls-inc@2x.webp" alt="" /></a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- end client logo item -->
-                    <!-- start client logo item -->
-                    <div class="col text-center margin-30px-bottom sm-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.4s">
-                        <div class="client-box padding-15px-all border border-color-dark-gray">
-                            <a href="#"><img class="client-box-image" src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/audubon-logo-stacked@2x.webp" alt="" /></a>
+                        <div class="swiper-slide">
+                            <div class="client-box">
+                                <a href="#"><img class="client-box-image" src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/audubon-logo-stacked@2x.webp" alt="" /></a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- end client logo item -->
-                    <!-- start client logo item -->
-                    <div class="col text-center sm-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.1s">
-                        <div class="client-box padding-15px-all border border-color-dark-gray">
-                            <a href="#"><img class="client-box-image" src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/united-way-logo@2x.webp" alt="" /></a>
+                        <div class="swiper-slide">
+                            <div class="client-box">
+                                <a href="#"><img class="client-box-image" src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/united-way-logo@2x.webp" alt="" /></a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- end client logo item -->
-                    <!-- start client logo item -->
-                    <div class="col text-center sm-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
-                        <div class="client-box padding-15px-all border border-color-dark-gray">
-                            <a href="#"><img class="client-box-image" src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/charitywater@2x.webp" alt="" /></a>
+                        <div class="swiper-slide">
+                            <div class="client-box">
+                                <a href="#"><img class="client-box-image" src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/charitywater@2x.webp" alt="" /></a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- end client logo item -->
+                        <!-- Add more logos here if needed -->
                     
+                        <div class="swiper-slide">
+                            <div class="client-box">
+                                <a href="#"><img class="client-box-image" src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/march-of-dimes@2x.webp" alt="" /></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="client-box">
+                                <a href="#"><img class="client-box-image" src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/goodwill@2x.webp" alt="" /></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="client-box">
+                                <a href="#"><img class="client-box-image" src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/girls-inc@2x.webp" alt="" /></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="client-box">
+                                <a href="#"><img class="client-box-image" src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/audubon-logo-stacked@2x.webp" alt="" /></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="client-box">
+                                <a href="#"><img class="client-box-image" src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/united-way-logo@2x.webp" alt="" /></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="client-box">
+                                <a href="#"><img class="client-box-image" src="https://www.guidestar.org/App_Themes/MainSite2/images/candid/charitywater@2x.webp" alt="" /></a>
+                            </div>
+                        </div>
+                        <!-- Add more logos here if needed -->
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         </section>
-        <!-- end section -->
+        
+
+
+
+        
 
 
         <!-- start section -->
-        <section class="cover-background xs-no-padding-tb xs-border-tb border-color-medium-gray" style="background-image:url('https://images.unsplash.com/photo-1532611322744-369123d95bd3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <section class="cover-background xs-no-padding-tb xs-border-tb border-color-medium-gray" style="background-image:url('https://images.unsplash.com/photo-1445197138520-6099f1c07aa0?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
             <div class="container xs-no-padding-lr">
                 <div class="row justify-content-center justify-content-lg-end">
                     <div class="col-xl-8 col-lg-9 col-md-10 col-sm-11">
@@ -357,21 +460,21 @@
                             <h5 class="alt-font text-dark-charcoal font-weight-700 text-uppercase letter-spacing-minus-1px margin-45px-bottom sm-letter-spacing-minus-1-half xs-margin-25px-bottom text-center text-sm-start">Stay up to date on the latest facts and insights on nonprofits</h5>
                             <ul class="list-style-06">
                                 <li class="bg-white border-radius-6px margin-35px-bottom last-paragraph-no-margin wow animate__fadeIn" data-wow-delay="0.3s">
-                                    <div><span class="w-25px h-25px text-center bg-olivine-green rounded-circle text-white margin-25px-right margin-5px-top d-flex flex-column"><i class="fa-solid fa-check"></i></span></div>
+                                    <div><span style="background-color: #004878;" class="w-25px h-25px text-center  rounded-circle text-white margin-25px-right margin-5px-top d-flex flex-column"><i class="fa-solid fa-check"></i></span></div>
                                     <div><span class="text-extra-medium text-dark-charcoal font-weight-500 margin-5px-bottom d-block">Quantity</span>
                                         <p class="w-80 line-height-22px lg-w-90 xs-w-100">Easily search 1.8 million IRS-recognized tax-exempt organizations, and thousands of faith-based nonprofits</p>
                                         <p class="w-80 line-height-22px lg-w-90 xs-w-100">Gather insights on financials, people/leadership, mission, and more</p>
                                     </div>
                                 </li>
                                 <li class="bg-white border-radius-6px margin-35px-bottom last-paragraph-no-margin wow animate__fadeIn" data-wow-delay="0.5s">
-                                    <div><span class="w-25px h-25px text-center bg-olivine-green rounded-circle text-white margin-25px-right margin-5px-top d-flex flex-column"><i class="fa-solid fa-check"></i></span></div>
+                                    <div><span style="background-color: #004878;" class="w-25px h-25px text-center bg-olivine-green rounded-circle text-white margin-25px-right margin-5px-top d-flex flex-column"><i class="fa-solid fa-check"></i></span></div>
                                     <div><span class="text-extra-medium text-dark-charcoal font-weight-500 margin-5px-bottom d-block">Quality</span>
                                         <p class="w-80 line-height-22px lg-w-90 xs-w-100">Authoritative data derived from validated sources, including 990s and direct reporting—verified and updated daily </p>
                                         <p class="w-80 line-height-22px lg-w-90 xs-w-100">Best-in-sector proprietary data processing enabling comprehensive analysis</p>
                                     </div>
                                 </li>
                                 <li class="bg-white border-radius-6px margin-35px-bottom last-paragraph-no-margin wow animate__fadeIn" data-wow-delay="0.5s">
-                                    <div><span class="w-25px h-25px text-center bg-olivine-green rounded-circle text-white margin-25px-right margin-5px-top d-flex flex-column"><i class="fa-solid fa-check"></i></span></div>
+                                    <div><span style="background-color: #004878;" class="w-25px h-25px text-center bg-olivine-green rounded-circle text-white margin-25px-right margin-5px-top d-flex flex-column"><i class="fa-solid fa-check"></i></span></div>
                                     <div><span class="text-extra-medium text-dark-charcoal font-weight-500 margin-5px-bottom d-block">Productivity (instead of speed)</span>
                                         <p class="w-80 line-height-22px lg-w-90 xs-w-100">Expand your research and analysis efficiency—our products do the heavy lifting</p>
                                         <p class="w-80 line-height-22px lg-w-90 xs-w-100">Power your systems/applications with our premier nonprofit data via APIs</p>
@@ -401,7 +504,7 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-10 col-xl-4 col-lg-5 md-margin-5-rem-bottom wow animate__fadeIn" data-wow-delay="0.2s">
                         <!-- <h5 class="alt-font text-dark-charcoal font-weight-700 text-uppercase letter-spacing-minus-1px">What is business annual conference</h5> -->
-                        <blockquote class="border-width-4px border-color-olivine-green text-extra-medium padding-25px-left pe-0 margin-40px-top margin-30px-bottom lg-w-95">
+                        <blockquote style="border-color: #ed1c24;" class="border-width-4px  text-extra-medium padding-25px-left pe-0 margin-40px-top margin-30px-bottom lg-w-95">
                             Nonprofit profiles help the sector take a leap forward from data and information about charities to powerful knowledge and insight to help us make informed decisions.
                         </blockquote>
                         <p class="w-90 md-w-100 text-end">—Victoria Vrana</p>
@@ -497,7 +600,7 @@
                     <div class="row">
                         <!-- start footer column -->
                         <div class="col-lg-3 col-sm-6 order-sm-1 order-lg-0 md-margin-40px-bottom xs-margin-25px-bottom">
-                            <h6>Cadid</h6>
+                            <h6>GuideStar India</h6>
                             <!-- <a href="index.html" class="footer-logo margin-25px-bottom d-inline-block"><img src="images/logo-green-black.png" data-at2x="images/logo-green-black@2x.png" alt=""></a> -->
                             <p class="margin-30px-bottom">Candid is a 501(c)(3) nonprofit organization, EIN 13-1837418. Donations are tax-deductible. </p>
                             <div class="social-icon-style-12">
@@ -542,11 +645,11 @@
                                 <div class="newsletter-style-03 position-relative margin-25px-bottom">
                                     <input class="small-input border-color-medium-gray rounded m-0 required" name="email" placeholder="Enter your email address" type="email">
                                     <input type="hidden" name="redirect" value="">
-                                    <button class="btn btn-olivine-green rounded-end submit" type="submit"><i class="feather icon-feather-mail icon-extra-small m-0"></i></button>
+                                    <button class="buton btn  rounded-end submit" type="submit"><i class="feather icon-feather-mail icon-extra-small m-0"></i></button>
                                     <div class="form-results rounded d-none position-absolute"></div>
                                 </div>
                             </form>
-                            <p>&copy; Copyright 2024 <a href="index.html" class="text-decoration-line-bottom text-extra-dark-gray font-weight-500">Cadid</a></p>
+                            <p>&copy; Copyright 2024 <a href="index.html" class="text-decoration-line-bottom text-extra-dark-gray font-weight-500">GuideStar India</a></p>
                         </div>
                         <!-- end footer column -->
                     </div>
