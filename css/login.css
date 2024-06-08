@@ -159,7 +159,7 @@ body {
     position: absolute;
     top: 0px;
     z-index: 1200;
-    text-align: center;
+    text-align: end;
     width: 100%;
     background-color: white;
 }
@@ -169,6 +169,19 @@ body {
     border: none;
     cursor: pointer;
     font-size: 16px;
+    padding-right: 40px;
+}
+#toggleContentBtn{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+    gap: 10px;
+}
+#toggleContentBtn p{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .expandable-content {
