@@ -17,12 +17,19 @@
         <link rel="stylesheet" type="text/css" href="css/theme-vendors.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+        
 
         <!-- Swiper CSS -->
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
         <!-- Optional: Animate CSS for the wow.js animations -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
         <style>
+            
+            @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+            body{
+                font-family: "Merriweather", serif;
+            }
+                
             .overlay {
                 position: absolute;
                 top: 0;
@@ -101,7 +108,7 @@
                 z-index: 1000; /* Ensure it appears above other elements */
             }
             .small{
-                color: white!important;
+                color: black!important;
             }
             @media (max-width:1000px) {
                 .small{
@@ -109,6 +116,22 @@
                 }
             }
 
+            .toggle-button-container {
+                position: relative;
+                top: 0px;
+                z-index: 1200;
+                text-align: end;
+                width: 100%;
+                background-color: white;
+            }
+            
+            .toggle-button {
+                background-color: white;
+                border: none;
+                cursor: pointer;
+                font-size: 16px;
+                padding-right: 40px;
+            }
             #toggleContentBtn{
                 display: flex;
                 align-items: center;
@@ -121,36 +144,26 @@
                 font-size: 14px;
                 font-weight: 600;
             }
-
-            .toggle-button-container {
-                position: absolute;
-                top: 0px;
-                z-index: 1200;
-                text-align: center;
-                width: 100%;
-                background-color: white;
-            }
-            
-            .toggle-button {
-                background-color: white;
-                border: none;
-                cursor: pointer;
-                font-size: 16px;
-            }
             
             .expandable-content {
-                display: none;
-                position: absolute;
+                overflow: hidden;
+                position: relative;
                 width: 100%;
                 background: white;
-                padding: 20px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                padding: 0 20px; /* Adjust padding to be only horizontal */
+                border-bottom: 1px solid #ccc;
                 z-index: 9999;
-                top: 30px; /* Adjust as needed */
+                top: 0px; /* Adjust as needed */
+                max-height: 0; /* Initially collapsed */
+                transition: max-height 0.5s ease, padding 0.5s ease;
+                opacity: 0; /* Start with opacity 0 */
+                transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
             }
             
             .expandable-content.visible {
-                display: block;
+                max-height: 1000px; /* Use a large value to accommodate content */
+                padding: 20px; /* Restore padding */
+                opacity: 1; /* Fade in */
             }
             
             .navbar {
@@ -197,7 +210,7 @@
         <!-- start header -->
         <header>
             <!-- start navigation -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-transparent border-bottom border-color-black-transparent header-light fixed-top navbar-boxed header-reverse-scroll">
+            <nav style="flex-wrap: wrap; padding: 0; margin: 0;background-color: white;" class="navbar navbar-expand-lg navbar-light  border-bottom border-color-black-transparent header-light fixed-top navbar-boxed header-reverse-scroll">
 
 
                 <!-- start navigation -->
@@ -208,80 +221,84 @@
                     </button>
                 </div>
                 
-                <!-- Expandable Content -->
-                <div id="expandableContent" class="expandable-content hidden">
-                    <div class="container" style="min-height: auto;">
-                        <div class="row">
-                            <!-- start footer column -->
-                            <div class="col-lg-3 col-sm-6 order-sm-1 order-lg-0 md-margin-40px-bottom xs-margin-25px-bottom">
-                                <img src="https://guidestarindia.org/images/GSI-logo_334x77.png" alt="" style="margin-bottom: 30px; height: 40px;">
-                                <!-- <a href="index.html" class="footer-logo margin-25px-bottom d-inline-block"><img src="images/logo-green-black.png" data-at2x="images/logo-green-black@2x.png" alt=""></a> -->
-                                <p class="margin-30px-bottom">Candid is a 501(c)(3) nonprofit organization, EIN 13-1837418. Donations are tax-deductible. </p>
-                                <div class="social-icon-style-12">
-                                    <ul class="extra-small-icon">
-                                        <li><a class="facebook" href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                        <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i class="fa-brands fa-dribbble"></i></a></li>
-                                        <li><a class="twitter" href="http://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                                        <li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- end footer column -->
-                            <!-- start footer column -->
-                            <div class="col-lg-2 offset-sm-1 col-sm-5 order-sm-2 order-lg-0 md-margin-40px-bottom xs-margin-25px-bottom">
-                                <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom">Our Websites</span>
-                                <ul>
-                                    <li><a href="">About Candid</a></li>
-                                    <li><a href=""></a>Press room</li>
-                                    <li><a href=""></a>Support Candid</li>
-                                    <li><a href=""></a>Partners and clients</li>
-                                    
-                                </ul>
-                            </div>
-                            <!-- end footer column -->
-                            <!-- start footer column -->
-                            <div class="col-lg-2 col-sm-5 offset-sm-1 offset-lg-0 order-sm-4 order-lg-0 xs-margin-25px-bottom">
-                                <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom">.</span>
-                                <ul>                           
-                                    <li href="">Contact us</li>
-                                    <li href="">Privacy policy</li>
-                                    <li href="">Legal notice</li>
-                                    <li href="">Terms of use</li>
-                                    <li href="">Site status</li>
-                                </ul>
-                            </div>
-                            <!-- end footer column -->
-                            <!-- start footer column -->
-                            <div class="col-lg-2 col-sm-5 offset-sm-1 offset-lg-0 order-sm-4 order-lg-0 xs-margin-25px-bottom">
-                                <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom">Product & service</span>
-                                <ul>                           
-                                    <li href="">Contact us</li>
-                                    <li href="">Privacy policy</li>
-                                    <li href="">Legal notice</li>
-                                    <li href="">Terms of use</li>
-                                    <li href="">Site status</li>
-                                </ul>
-                            </div>
-                            <!-- end footer column -->
-                            <!-- start footer column -->
-                            <div class="col-lg-2 col-sm-5 offset-sm-1 offset-lg-0 order-sm-4 order-lg-0 xs-margin-25px-bottom">
-                                <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom">.</span>
-                                <ul>                           
-                                    <li href="">Contact us</li>
-                                    <li href="">Privacy policy</li>
-                                    <li href="">Legal notice</li>
-                                    <li href="">Terms of use</li>
-                                    <li href="">Site status</li>
-                                </ul>
-                            </div>
-                            <!-- end footer column -->
-                            
-                        </div>
-                    </div>
-                </div>
+                
 
 
                 <div class="container-fluid nav-header-container">
+
+                    <!-- Expandable Content -->
+                    <div id="expandableContent" class="expandable-content hidden">
+                        <div class="container" style="min-height: auto;">
+                            <div class="row">
+                                <!-- start footer column -->
+                                <div class="col-lg-3 col-sm-6 order-sm-1 order-lg-0 md-margin-40px-bottom xs-margin-25px-bottom">
+                                    <img src="https://guidestarindia.org/images/GSI-logo_334x77.png" alt="" style="margin-bottom: 30px; height: 40px;">
+                                    <!-- <a href="index.html" class="footer-logo margin-25px-bottom d-inline-block"><img src="images/logo-green-black.png" data-at2x="images/logo-green-black@2x.png" alt=""></a> -->
+                                    <p class="margin-30px-bottom">Candid is a 501(c)(3) nonprofit organization, EIN 13-1837418. Donations are tax-deductible. </p>
+                                    <div class="social-icon-style-12">
+                                        <ul class="extra-small-icon">
+                                            <li><a class="facebook" href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                            <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i class="fa-brands fa-dribbble"></i></a></li>
+                                            <li><a class="twitter" href="http://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                                            <li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- end footer column -->
+                                <!-- start footer column -->
+                                <div class="col-lg-2 offset-sm-1 col-sm-5 order-sm-2 order-lg-0 md-margin-40px-bottom xs-margin-25px-bottom">
+                                    <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom">Our Websites</span>
+                                    <ul>
+                                        <li><a href="">About Candid</a></li>
+                                        <li><a href=""></a>Press room</li>
+                                        <li><a href=""></a>Support Candid</li>
+                                        <li><a href=""></a>Partners and clients</li>
+                                        
+                                    </ul>
+                                </div>
+                                <!-- end footer column -->
+                                <!-- start footer column -->
+                                <div class="col-lg-2 col-sm-5 offset-sm-1 offset-lg-0 order-sm-4 order-lg-0 xs-margin-25px-bottom">
+                                    <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom">.</span>
+                                    <ul>                           
+                                        <li href="">Contact us</li>
+                                        <li href="">Privacy policy</li>
+                                        <li href="">Legal notice</li>
+                                        <li href="">Terms of use</li>
+                                        <li href="">Site status</li>
+                                    </ul>
+                                </div>
+                                <!-- end footer column -->
+                                <!-- start footer column -->
+                                <div class="col-lg-2 col-sm-5 offset-sm-1 offset-lg-0 order-sm-4 order-lg-0 xs-margin-25px-bottom">
+                                    <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom">Product & service</span>
+                                    <ul>                           
+                                        <li href="">Contact us</li>
+                                        <li href="">Privacy policy</li>
+                                        <li href="">Legal notice</li>
+                                        <li href="">Terms of use</li>
+                                        <li href="">Site status</li>
+                                    </ul>
+                                </div>
+                                <!-- end footer column -->
+                                <!-- start footer column -->
+                                <div class="col-lg-2 col-sm-5 offset-sm-1 offset-lg-0 order-sm-4 order-lg-0 xs-margin-25px-bottom">
+                                    <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom">.</span>
+                                    <ul>                           
+                                        <li href="">Contact us</li>
+                                        <li href="">Privacy policy</li>
+                                        <li href="">Legal notice</li>
+                                        <li href="">Terms of use</li>
+                                        <li href="">Site status</li>
+                                    </ul>
+                                </div>
+                                <!-- end footer column -->
+                                
+                            </div>
+                        </div>
+                    </div>
+
+
                     <div class="col-auto col-sm-6 col-lg-2 me-auto ps-lg-0">
                         <a class="navbar-brand" href="index.html">
                             <img src="https://guidestarindia.org/images/GSI-logo_334x77.png" data-at2x="images/logo-green-black@2x.png" class="default-logo" alt="">
@@ -348,7 +365,7 @@
                             <div class="col-lg-8 col-md-10 col-sm-11 full-screen md-h-650px sm-h-450px d-flex flex-column justify-content-center wow animate__fadeIn">
                                 <!-- <span class="text-extra-medium alt-font font-weight-500 text-uppercase text-olivine-green d-block margin-35px-bottom xs-margin-15px-bottom">Financial planning</span> -->
                                 <h2 class="alt-font font-weight-700 text-dark-charcoal text-uppercase margin-2-half-rem-bottom letter-spacing-minus-2px sm-margin-20px-bottom xs-margin-15px-bottom" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Providing you with the nonprofit information you need</h2>
-                                <p class="text-extra-medium line-height-30px w-75 margin-3-rem-bottom lg-w-90 md-w-100 xs-margin-15px-bottom" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Use GuideStar to look up a nonprofit and access the most complete data available.</p>
+                                <p class="text-extra-medium line-height-30px w-75 margin-3-rem-bottom lg-w-90 md-w-100 xs-margin-15px-bottom " style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Use GuideStar to look up a nonprofit and access the most complete data available.</p>
                                 <div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
                                     <div class="search-container">
                                         <input type="text" class="search-input" placeholder="Search...">
@@ -413,7 +430,7 @@
                                 <span class="alt-font font-weight-500 text-dark-charcoal text-uppercase d-block margin-5px-bottom">
                                     Research valuable nonprofit partners
                                 </span>
-                                <p>Efficiently find organizations that will meet your goals and gain more valuable partnerships with GuideStar Pro.</p>
+                                <p style="padding-bottom: 30px;">Efficiently find organizations that will meet your goals and gain more valuable partnerships with GuideStar Pro.</p>
                                 <div class="w-100 h-4px bg-olivine-green position-absolute left-0px bottom-0px d-block" style="background-color: #004878;"></div>
                             </div>
                         </div>
@@ -434,7 +451,7 @@
                                 <span class="alt-font font-weight-500 text-dark-charcoal text-uppercase d-block margin-5px-bottom">
                                     Access nonprofit API solutions
                                 </span>
-                                <p style="padding-bottom: 60px;">Power your platforms with Candid’s APIs to support your organizational needs.</p>
+                                <p style="padding-bottom: 90px;">Power your platforms with Candid’s APIs to support your organizational needs.</p>
                                 <div class="w-100 h-4px position-absolute left-0px bottom-0px d-block" style="background-color: #004878;"></div>
                             </div>
                         </div>
