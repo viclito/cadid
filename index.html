@@ -70,6 +70,15 @@
                 font-size: 16px;
                 width: 300px;
             }
+            .search-input2 {
+                padding: 5px 40px 5px 15px;
+                border: 2px solid #004878;
+                border-radius: 5px;
+                outline: none;
+                font-size: 16px;
+                width: 300px;
+                margin: 0;
+            }
     
             .search-icon {
                 position: absolute;
@@ -80,8 +89,20 @@
                 color: #ccc;
                 pointer-events: none;
             }
+            .search-icon2 {
+                position: absolute;
+                top: 38%;
+                right: 15px;
+                transform: translateY(-50%);
+                font-size:18px;
+                color: #ccc;
+                pointer-events: none;
+            }
     
             .search-input:focus + .search-icon {
+                color: #555;
+            }
+            .search-input2:focus + .search-icon2 {
                 color: #555;
             }
     
@@ -295,9 +316,18 @@
                             </div>
                         </div>
                     </div>
-                    <div style="width: 100%; padding: 5px; background-color: #004878;">
+                    <div style="width: 100%; padding: 5px; display: flex;gap: 10px; justify-content: end;">
+                        <div class="search-container">
+                            <input type="text" class="search-input2" placeholder="Search...">
+                            <i class="fa fa-search search-icon2"></i>
+                            <button class="search-button">Search</button>
+                        </div>
+                        <h4 style="font-size: 14px;margin: 0;">NPO/Charity check</h4>
+                    </div>
+                    <div style="width: 100%; padding: 5px; background-color: #012060;">
                         <p style="margin: 0; color: white;">India's most exhaustive information repository of Not-for-Profit Organization (NPOs/NGOs)</p>
                     </div>
+                    
 
 
                     <div class="col-auto col-sm-6 col-lg-2 me-auto ps-lg-0" style="margin-left: 100px; width: 50px;">

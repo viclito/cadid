@@ -39,6 +39,39 @@
                 background-color: white;
                 color: #ed1c24;
             }
+            .search-container {
+                position: relative;
+                width: 300px;
+                margin-top: 4px;
+            }
+    
+            .search-input2 {
+                padding: 5px 40px 5px 15px;
+                border: 2px solid #004878;
+                border-radius: 5px;
+                outline: none;
+                font-size: 16px;
+                width: 300px;
+                margin: 0;
+            }
+  
+            .search-icon2 {
+                position: absolute;
+                top: 38%;
+                right: 15px;
+                transform: translateY(-50%);
+                font-size:18px;
+                color: #ccc;
+                pointer-events: none;
+            }
+    
+            .search-input2:focus + .search-icon2 {
+                color: #555;
+            }
+    
+            .search-button {
+                display: none; /* Hide the button */
+            }
         </style>
         
     </head>
@@ -60,15 +93,61 @@
                 <div class="container-fluid nav-header-container">
 
                     <!-- Expandable Content -->
-                    <div id="expandableContent" class="expandable-content hidden">
+                    <div id="expandableContent" class="expandable-content hidden" style="background-color: #83B4FF;">
                         <div class="container" style="min-height: auto;">
                             <div class="row">
                                 <!-- start footer column -->
                                 <div class="col-lg-3 col-sm-6 order-sm-1 order-lg-0 md-margin-40px-bottom xs-margin-25px-bottom">
-                                    <img src="./assets/logoguidestar.png" alt="" style="margin-bottom: 30px; height: 40px;">
+                                    <img src="./assets/logoguidestar.png" alt="" style="margin-bottom: 30px; height: 150px;">
                                     <!-- <a href="index.html" class="footer-logo margin-25px-bottom d-inline-block"><img src="images/logo-green-black.png" data-at2x="images/logo-green-black@2x.png" alt=""></a> -->
-                                    <p class="margin-30px-bottom">GuideStar is a 501(c)(3) nonprofit organization, EIN 13-1837418. Donations are tax-deductible. </p>
+                                    <!-- <p class="margin-30px-bottom">GuideStar is a 501(c)(3) nonprofit organization, EIN 13-1837418. Donations are tax-deductible. </p>
                                     <div class="social-icon-style-12">
+                                        <ul class="extra-small-icon">
+                                            <li><a class="facebook" href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                            <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i class="fa-brands fa-dribbble"></i></a></li>
+                                            <li><a class="twitter" href="http://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                                            <li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                        </ul>
+                                    </div> -->
+                                </div>
+                                <!-- end footer column -->
+                                <!-- start footer column -->
+                                <div class="col-lg-2 offset-sm-1 col-sm-5 order-sm-2 order-lg-0 md-margin-40px-bottom xs-margin-25px-bottom" >
+                                    <!-- <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom">Our Websites</span> -->
+                                    <ul>
+                                        <li><a href="" style="color: black;">Our Theory of Change and Impact</a></li>
+                                        <li><a href="" style="color: black;">Legal an FCRA Complaince</a></li>
+                                        
+                                    </ul>
+                                </div>
+                                <!-- end footer column -->
+                                <!-- start footer column -->
+                                <div class="col-lg-2 col-sm-5 offset-sm-1 offset-lg-0 order-sm-4 order-lg-0 xs-margin-25px-bottom">
+                                    <!-- <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom">.</span> -->
+                                    <ul>
+                                        <li><a href="" style="color: black;">Our people , Partners and Supporters</a></li>
+                                        <li><a href="" style="color: black;">Research Report</a></li>
+                                        
+                                    </ul>
+                                </div>
+                                <!-- end footer column -->
+                                <!-- start footer column -->
+                                <div class="col-lg-2 col-sm-5 offset-sm-1 offset-lg-0 order-sm-4 order-lg-0 xs-margin-25px-bottom">
+                                    <!-- <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom">Product & service</span> -->
+                                    <ul>
+                                        <li><a href="" style="color: black;">Join our Forum</a></li>
+                                        <li><a href="" style="color: black;">Access our Resources for NPOS</a></li>    
+                                    </ul>
+                                </div>
+                                <!-- end footer column -->
+                                <!-- start footer column -->
+                                <div class="col-lg-2 col-sm-5 offset-sm-1 offset-lg-0 order-sm-4 order-lg-0 xs-margin-25px-bottom">
+                                    <!-- <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom">Follow Us</span> -->
+                                    <div class="social-icon-style-12">
+                                        <ul>
+                                            <li><a href="" style="color: black;">Follow us</a></li>
+                                            <!-- <li><a href="" style="color: black;">Access our Resources for NPOS</a></li>     -->
+                                        </ul>
                                         <ul class="extra-small-icon">
                                             <li><a class="facebook" href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
                                             <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i class="fa-brands fa-dribbble"></i></a></li>
@@ -78,66 +157,22 @@
                                     </div>
                                 </div>
                                 <!-- end footer column -->
-                                <!-- start footer column -->
-                                <div class="col-lg-2 offset-sm-1 col-sm-5 order-sm-2 order-lg-0 md-margin-40px-bottom xs-margin-25px-bottom">
-                                    <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom">Our Websites</span>
-                                    <ul>
-                                        <li><a href="">About GuideStar</a></li>
-                                        <li><a href=""></a>Press room</li>
-                                        <li><a href=""></a>Support GuideStar</li>
-                                        <li><a href=""></a>Partners and clients</li>
-                                        
-                                    </ul>
-                                </div>
-                                <!-- end footer column -->
-                                <!-- start footer column -->
-                                <div class="col-lg-2 col-sm-5 offset-sm-1 offset-lg-0 order-sm-4 order-lg-0 xs-margin-25px-bottom">
-                                    <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom">.</span>
-                                    <ul>                           
-                                        <li href="">Contact us</li>
-                                        <li href="">Privacy policy</li>
-                                        <li href="">Legal notice</li>
-                                        <li href="">Terms of use</li>
-                                        <li href="">Site status</li>
-                                    </ul>
-                                </div>
-                                <!-- end footer column -->
-                                <!-- start footer column -->
-                                <div class="col-lg-2 col-sm-5 offset-sm-1 offset-lg-0 order-sm-4 order-lg-0 xs-margin-25px-bottom">
-                                    <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom">Product & service</span>
-                                    <ul>                           
-                                        <li href="">Contact us</li>
-                                        <li href="">Privacy policy</li>
-                                        <li href="">Legal notice</li>
-                                        <li href="">Terms of use</li>
-                                        <li href="">Site status</li>
-                                    </ul>
-                                </div>
-                                <!-- end footer column -->
-                                <!-- start footer column -->
-                                <div class="col-lg-2 col-sm-5 offset-sm-1 offset-lg-0 order-sm-4 order-lg-0 xs-margin-25px-bottom">
-                                    <span class="alt-font font-weight-500 d-block text-extra-dark-gray margin-20px-bottom xs-margin-10px-bottom">.</span>
-                                    <ul>                           
-                                        <li href="">Contact us</li>
-                                        <li href="">Privacy policy</li>
-                                        <li href="">Legal notice</li>
-                                        <li href="">Terms of use</li>
-                                        <li href="">Site status</li>
-                                    </ul>
-                                </div>
-                                <!-- end footer column -->
                                 
                             </div>
                         </div>
                     </div>
 
+                    <div style="width: 100%; padding: 5px; display: flex;gap: 10px; justify-content: end;">
+                        <div class="search-container">
+                            <input type="text" class="search-input2" placeholder="Search...">
+                            <i class="fa fa-search search-icon2"></i>
+                            <button class="search-button">Search</button>
+                        </div>
+                        <h4 style="font-size: 14px;margin: 0;">NPO/Charity check</h4>
+                    </div>
 
-                    <div class="col-auto col-sm-6 col-lg-2 me-auto ps-lg-0" style="margin-left: 100px; width: 50px;">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="./assets/logoguidestar.png" class="default-logo" alt="">
-                            <img src="./assets/logoguidestar.png" class="alt-logo" alt="">
-                            <img src="./assets/logoguidestar.png" class="mobile-logo" alt="">
-                        </a>
+                    <div style="width: 100%; padding: 5px; background-color: #012060;">
+                        <p style="margin: 0; color: white;">India's most exhaustive information repository of Not-for-Profit Organization (NPOs/NGOs)</p>
                     </div>
                     <div class="col-auto col-lg-10 menu-order px-lg-0">
                         <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
