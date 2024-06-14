@@ -253,7 +253,7 @@
               }
         </style>
     </head>
-    <body data-mobile-nav-style="classic">
+    <body data-mobile-nav-style="classic" style="overflow-x: hidden; width: 100vw;">
         <!-- start header -->
         <header>
             <!-- start navigation -->
@@ -381,9 +381,7 @@
                             <span class="navbar-toggler-line"></span>
                         </button>
                         <div class="collapse navbar-collapse " style="justify-content: space-between; max-width: 1300px;margin: auto;" id="navbarNav">
-                            <div class="header-button d-none d-md-inline-block" style="margin-right: 10px; width: 120px;">
-                                <a href="" class="btn btn-very-small btn-white btn-round-edge border-white text-white box-shadow-large" style="background-color: #83B4FF;">Sign In</a>
-                            </div>
+                            
                             <ul class="navbar-nav alt-font" style="display: flex; justify-content: space-around;width: 100%;">
                                 <li class="nav-item dropdown megamenu">
                                     <a style="margin: 0 10px;" href="index.html" class="nav-link text-uppercase">Home</a>
@@ -415,6 +413,9 @@
                                 </li>
                                 
                             </ul>
+                            <div class="header-button d-none d-md-inline-block" style="margin-right: 10px; width: 120px;">
+                                <a href="" class="btn btn-very-small btn-white btn-round-edge border-white text-white box-shadow-large" style="background-color: #83B4FF;">Sign In</a>
+                            </div>
                             <div class="header-button d-none d-md-inline-block" style="width: 190px;">
                                 <a href="login.html" class="register-button btn btn-very-small btn-white btn-round-edge  border-white text-white box-shadow-large " style="background-color: #83B4FF;">Create Account</a>
                             </div>
@@ -931,7 +932,7 @@
         <!-- start footer -->
         <footer class="footer-light footer-finance">
             <div class="footer-top padding-six-tb lg-padding-eight-tb md-padding-50px-tb">
-                <div class="container" style="min-height: auto; min-width: 1400px;">
+                <div class="container" style="min-height: auto; max-width: 1400px;">
                     <div class="row">
                         <!-- start footer column -->
                         <!-- <div class="col-lg-2 col-sm-6 order-sm-1 order-lg-0 md-margin-40px-bottom xs-margin-25px-bottom">
